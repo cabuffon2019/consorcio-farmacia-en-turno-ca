@@ -23,8 +23,9 @@ Por problemas con la url https://farmanet.minsal.cl/maps/index.php/ws/getLocales
     
 ### Información del proyecto 
 
-<li>En archivo de propiedades del proyecto se define la Url a consumir (resource/application.properties)
-<li>La infomación que contendra el mock esta definida en el archivo /data.json  
 <li>El endpoint que expone el servicio Rest de tipo Get es http://localhost:8080/api/farmacias
   el cual recibe 3 paramatros (idRegion, comuna, nombreLocal) quedando de la siguiente forma a modo de ejemplo http://localhost:8080/api/farmacias?idRegion=7&comuna=MACUL&nombreLocal=AHUMADA
+<li>En archivo de propiedades del proyecto se define la Url a consumir (resource/application.properties)
+<li>La infomación que contendra el mock esta definida en el archivo /data.json  
+
 

@@ -1,6 +1,4 @@
 
-[![CircleCI](https://circleci.com/gh/cabuffon/Spring-Rest-Template-Example.svg?style=svg)](https://circleci.com/gh/ramazan/Spring-Rest-Template-Example)
-
 # Spring Boot Rest Api RestFull de Farmacia en Turno Publico
 
 Tecnologias usadas

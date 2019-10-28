@@ -1,16 +1,17 @@
 
 [![CircleCI](https://circleci.com/gh/cabuffon/Spring-Rest-Template-Example.svg?style=svg)](https://circleci.com/gh/ramazan/Spring-Rest-Template-Example)
 
-# Spring Boot Rest Template Example Project
+# Spring Boot Rest Api RestFull de Farmacia en Turno Publico
 
-Used technologies 
+Tecnologias usadas
   <li>Spring 5
-  <li> Spring Boot 2 
+  <li>Spring Boot 2 
   <li>Spring Boot DevTools 
   <li>Project Lombok
-  <li>Thymeleaf 
-  <li>WebJars -  (<a href="http://www.webjars.org"> Web Libraries in Jars </a>) 
-  <li>CircleCI - (<a href="http://www.circleci.com/"> Continuous Integration </a>) 
+  <li>WebJars
+  <li>cucumber-junit
+  <li>mockito
+  <li>java 8
  
 
 ### I used Fake API service for this example project.

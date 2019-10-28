@@ -12,9 +12,9 @@ Tecnologias usadas
   <li>java 8
  
 
-### I used Fake API service for this example project.
+### Servicio que retorna las farmacias que se encuentran de turno de acuerdo a los siguientes filtros: Comuna y Nombre de local.
 
-### End point : http://apifaketory.com/api/user?limit=10
+### Por problemas con la url https://farmanet.minsal.cl/maps/index.php/ws/getLocalesRegion se crea la misma estructura de array json desde un mock desplegado con Mockoon con la siguiente información:
 
 ### I used <a href="http://www.jsonschema2pojo.org/">jsonschema2pojo</a> for creating JSON to POJOs
 

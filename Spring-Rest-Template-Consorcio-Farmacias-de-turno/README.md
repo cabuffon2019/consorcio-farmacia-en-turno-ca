@@ -4,6 +4,7 @@
 Tecnologias usadas
   <li>Spring 5
   <li>Spring Boot 2 
+  <li>restTemplate
   <li>Spring Boot DevTools 
   <li>Project Lombok
   <li>WebJars
@@ -18,7 +19,10 @@ Por problemas con la url https://farmanet.minsal.cl/maps/index.php/ws/getLocales
   <li>url: http://localhost:8099/mockito/api/region
   <li>HttpMethod: GET
     
-###En archivo de propiedades del proyecto se define la Uri    
+### Información del proyecto 
+
+<li>En archivo de propiedades del proyecto se define la Uri a consumir (resource/application.properties)
+<li>La infomación que contendra el mock esta definida en el archivo /data.json  
 
 ### I used <a href="http://www.jsonschema2pojo.org/">jsonschema2pojo</a> for creating JSON to POJOs
 

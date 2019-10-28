@@ -14,7 +14,11 @@ Tecnologias usadas
 
 ### Servicio que retorna las farmacias que se encuentran de turno de acuerdo a los siguientes filtros: Comuna y Nombre de local.
 
-### Por problemas con la url https://farmanet.minsal.cl/maps/index.php/ws/getLocalesRegion se crea la misma estructura de array json desde un mock desplegado con Mockoon con la siguiente información:
+Por problemas con la url https://farmanet.minsal.cl/maps/index.php/ws/getLocalesRegion se crea la misma estructura de array json desde un mock desplegado con Mockoon con la siguiente información:
+  <li>url: http://localhost:8099/mockito/api/region
+  <li>HttpMethod: GET
+    
+###En archivo de propiedades del proyecto se define la Uri    
 
 ### I used <a href="http://www.jsonschema2pojo.org/">jsonschema2pojo</a> for creating JSON to POJOs
 

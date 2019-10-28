@@ -21,7 +21,7 @@ Por problemas con la url https://farmanet.minsal.cl/maps/index.php/ws/getLocales
     
 ### Información del proyecto 
 
-<li>En archivo de propiedades del proyecto se define la Uri a consumir (resource/application.properties)
+<li>En archivo de propiedades del proyecto se define la Url a consumir (resource/application.properties)
 <li>La infomación que contendra el mock esta definida en el archivo /data.json  
 
 ### I used <a href="http://www.jsonschema2pojo.org/">jsonschema2pojo</a> for creating JSON to POJOs

@@ -1,8 +1,8 @@
-package cl.farmacias.client.impl;
+package cl.consorcio.farmacias.client.impl;
 
-import cl.farmacias.client.GetLocalesRegionClient;
-import cl.farmacias.model.IdRegionRequest;
-import cl.farmacias.model.LocalesRegion;
+import cl.consorcio.farmacias.client.GetLocalesRegionClient;
+import cl.consorcio.farmacias.model.IdRegionRequest;
+import cl.consorcio.farmacias.model.LocalesRegion;
 import gherkin.deps.com.google.gson.Gson;
 import gherkin.deps.com.google.gson.JsonObject;
 import gherkin.deps.com.google.gson.internal.LinkedTreeMap;

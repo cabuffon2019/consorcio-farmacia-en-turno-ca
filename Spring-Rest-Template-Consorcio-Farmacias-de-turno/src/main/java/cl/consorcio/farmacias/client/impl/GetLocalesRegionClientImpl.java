@@ -1,17 +1,21 @@
-package cl.consorcio.farmacias.client.impl;
+package cl.farmacias.client.impl;
 
-import cl.consorcio.farmacias.client.GetLocalesRegionClient;
-import cl.consorcio.farmacias.model.IdRegionRequest;
-import cl.consorcio.farmacias.model.LocalesRegion;
+import cl.farmacias.client.GetLocalesRegionClient;
+import cl.farmacias.model.IdRegionRequest;
+import cl.farmacias.model.LocalesRegion;
+import gherkin.deps.com.google.gson.Gson;
+import gherkin.deps.com.google.gson.JsonObject;
+import gherkin.deps.com.google.gson.internal.LinkedTreeMap;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Slf4j
@@ -31,18 +35,46 @@ public class GetLocalesRegionClientImpl implements GetLocalesRegionClient {
         idRegionReq.setIdRegion(idRegion);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setContentType(MediaType.TEXT_HTML);
 
-        HttpEntity<?> entity = new HttpEntity<>(idRegionReq, headers);
 
-        ResponseEntity<List<LocalesRegion>> responseResponseEntity =
+        UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(getLocalesRegionUri)
+                .queryParam("id_region", idRegion);
+        log.debug("Call local region URL {}", uriComponentsBuilder.toUriString());
+        ResponseEntity<String> responseResponseEntity = restTemplate
+                .exchange(uriComponentsBuilder.toUriString(), HttpMethod.GET,
+                        new HttpEntity<>(headers), String.class);
+
+        String localesRegion = responseResponseEntity.getBody();
+
+        System.out.println(localesRegion);
+        Gson gson = new Gson();
+        List<LinkedTreeMap> list = gson.fromJson(localesRegion, List.class);
+        return list.stream()
+                .map(map -> {
+                    JsonObject jsonObject = gson.toJsonTree(map).getAsJsonObject();
+                    return gson.fromJson(jsonObject, LocalesRegion.class);
+                }).collect(Collectors.toList());
+    }
+}
+
+
+
+/*
+        UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl(getLocalesRegionUri)
+                .queryParam("id_region", idRegion);
+        log.debug("Call accept URL {}", uriComponentsBuilder.toUriString());
+        ResponseEntity<List<LocalesRegion>> responseResponseEntity = restTemplate
+                .exchange(uriComponentsBuilder.toUriString(), HttpMethod.GET,
+                        new HttpEntity<>(headers), new ParameterizedTypeReference<List<LocalesRegion>>() {
+                        });
+
+       List<LocalesRegion> localesRegion = responseResponseEntity.getBody();
+
+
+       ResponseEntity<List<LocalesRegion>> responseResponseEntity =
                 restTemplate.exchange(getLocalesRegionUri + "?id_region=" + idRegionReq,
                         HttpMethod.GET, entity, new ParameterizedTypeReference<List<LocalesRegion>>() {
                         });
 
-        List<LocalesRegion> localesRegion = responseResponseEntity.getBody();
-
-        return localesRegion;
-
-    }
-}
+        */
